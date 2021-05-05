@@ -3,17 +3,53 @@ name: Docker Image CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
 
-  build:
+  python_build:
+    name: Build web files
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+        
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install markdown
+      - name: execute py script
+        run: python ./src/build.py
+        
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: files
+          path: ~/src/public
+    
+
+  docker_build:
+    
+    name: Build and upload docker image
+    needs: python_build
 
     runs-on: ubuntu-latest
 
     steps:
+    - name: checkout repo content
     - uses: actions/checkout@v2
+    
+    - name: Download math result for job 2
+      uses: actions/download-artifact@v2
+      with:
+        name: files
+        path: ~/src/public
+        
+    - name: Display structure of downloaded files
+      run: ls -R
     
     - name: Login
       run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login docker.pkg.github.com -u ${{ secrets.DOCKER_USERNAME }} --password-stdin    
