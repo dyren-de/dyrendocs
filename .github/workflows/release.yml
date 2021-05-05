@@ -1,0 +1,68 @@
+name: Docker Image Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+
+  python_build:
+    name: Build web files
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+        
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: execute py script
+        run: python ./src/build.py
+        
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: files
+          path: /home/runner/work/dyrendocs/dyrendocs
+    
+
+  docker_build:
+    
+    name: Build and upload docker image
+    needs: python_build
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Download required files
+      uses: actions/download-artifact@v2
+      with:
+        name: files
+        path: /home/runner/work/dyrendocs/dyrendocs
+        
+    - name: Display structure of downloaded files
+      run: ls -R
+      
+    - name: Build the image
+      run: docker build -t docker.pkg.github.com/dyren-de/dyrendocs/dyrendocs:1.0 .
+
+    - name: Save the image
+      run: docker save docker.pkg.github.com/dyren-de/dyrendocs/dyrendocs:1.0 | gzip > dyrendocs.tar.gz
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: image
+        path: dyrendocs.tar.gz
+
+    - name: Login
+      run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login docker.pkg.github.com -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+      
+    - name: Push the image
+      run: docker push docker.pkg.github.com/dyren-de/dyrendocs/dyrendocs:1.0
