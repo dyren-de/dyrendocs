@@ -44,7 +44,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: files
-        path: ~/src/public
+        path: /home/runner/work/dyrendocs/dyrendocs
         
     - name: Display structure of downloaded files
       run: ls -R
