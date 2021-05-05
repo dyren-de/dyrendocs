@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image Release
 
 on:
   push:
@@ -48,12 +48,21 @@ jobs:
         
     - name: Display structure of downloaded files
       run: ls -R
-    
-    - name: Login
-      run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login docker.pkg.github.com -u ${{ secrets.DOCKER_USERNAME }} --password-stdin    
       
     - name: Build the image
       run: docker build -t docker.pkg.github.com/dyren-de/dyrendocs/dyrendocs:1.0 .
+
+    - name: Save the image
+      run: docker save dyrendocs:latest | gzip > dyrendocs.tar.gz
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: image
+        path: dyrendocs.tar.gz
+
+    - name: Login
+      run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login docker.pkg.github.com -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
       
     - name: Push the image
       run: docker push docker.pkg.github.com/dyren-de/dyrendocs/dyrendocs:1.0
