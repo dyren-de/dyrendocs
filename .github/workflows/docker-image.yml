@@ -53,7 +53,7 @@ jobs:
       run: docker build -t docker.pkg.github.com/dyren-de/dyrendocs/dyrendocs:1.0 .
 
     - name: Save the image
-      run: docker save dyrendocs:latest | gzip > dyrendocs.tar.gz
+      run: docker save dyrendocs:1.0 | gzip > dyrendocs.tar.gz
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v2
