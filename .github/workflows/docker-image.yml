@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: files
-          path: ~/src/public
+          path: /home/runner/work/dyrendocs/dyrendocs
     
 
   docker_build:
@@ -39,10 +39,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout repo content
-      uses: actions/checkout@v2
     
-    - name: Download math result for job 2
+    - name: Download required files
       uses: actions/download-artifact@v2
       with:
         name: files
