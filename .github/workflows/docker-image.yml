@@ -23,6 +23,39 @@ jobs:
           pip install -r requirements.txt
       - name: execute py script
         run: python ./src/build.py
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update Webcontent
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: web-updates
+          delete-branch: true
+          title: '[Webcontent] Update Webcontent'
+          body: |
+            Automated deployment
+            - Changes made by the CI
+            - to be deployed at [docs.dyren.de][1]
+
+            [1]: https://docs.dyren.de/
+          labels: |
+            automated
+            gh-pages
+          assignees: max-42
+          reviewers: max-42
+          team-reviewers: |
+            owners
+            maintainers
+          draft: false
+
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
         
       - name: Cleanup
         run: |
