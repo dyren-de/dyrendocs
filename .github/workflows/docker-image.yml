@@ -24,6 +24,14 @@ jobs:
       - name: execute py script
         run: python ./src/build.py
         
+      - name: Cleanup
+        run: |
+          rm -R ./.git
+          rm -R ./.github
+          rm -R ./src
+          rm ./README.md
+          rm ./requirements.txt
+        
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
