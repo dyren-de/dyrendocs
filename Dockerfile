@@ -7,8 +7,7 @@ RUN echo 'Start...'
 
 LABEL maintainer="https://github.com/Max-42"
 
-
-MAINTAINER Max <max@oppermann.fun>
+LABEL maintainer="max@oppermann.fun"
 
 #Not important if you not using the same reverse proxy
 ENV VIRTUAL_HOST=docs.example.com
