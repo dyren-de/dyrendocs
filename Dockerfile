@@ -1,13 +1,7 @@
 # Dockerfile
 FROM php:8.0-apache
 
-LABEL maintainer="https://github.com/Max-42"
-
-<<<<<<< HEAD
 LABEL maintainer="max@oppermann.fun"
-=======
-MAINTAINER Max <max@oppermann.fun>
->>>>>>> 359d4e7f586f68269e19fac9d25c15e42a19f8dc
 
 #Not important if you not using the same reverse proxy
 ENV VIRTUAL_HOST=docs.dyren.de
