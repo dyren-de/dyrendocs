@@ -23,6 +23,18 @@ def prepare():
         print("No files to cleanup.")
 
 
+    #copy files that have to be in the webroot dir
+    filepath = os.path.dirname(os.path.realpath('__file__'))
+    tmppathfrom = os.path.join(filepath, 'src' , 'include', 'root')
+    tmppathto = os.path.join(filepath,'docs')
+    shutil.copytree(tmppathfrom, tmppathto)
+    try: 
+        shutil.copytree(tmppathfrom, tmppathto)
+    except OSError:
+        print ("Webroot- Creation of the directory %s failed" % filepath)
+    else:
+        print ("Webroot-  Successfully created the directory %s " % filepath)
+
     filepath = os.path.dirname(os.path.realpath('__file__'))
     tmppathfrom = os.path.join(filepath, 'src' , 'include', 'assets')
     tmppathto = os.path.join(filepath,'docs', 'assets')
@@ -34,10 +46,6 @@ def prepare():
     else:
         print ("Successfully created the directory %s " % filepath)
 
-    #Copy CNAME file to use it In gh-pages
-    cnamesrc = os.path.join(filepath,'src','include','CNAME')
-    cnamedest = os.path.join(filepath,'docs','CNAME')
-    shutil.copyfile(cnamesrc,cnamedest)
 
     filepath = os.path.dirname(os.path.realpath('__file__'))
     filepath= os.path.join(filepath, 'src' , 'include')
