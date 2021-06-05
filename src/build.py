@@ -34,6 +34,11 @@ def prepare():
     else:
         print ("Successfully created the directory %s " % filepath)
 
+    #Copy CNAME file to use it In gh-pages
+    cnamesrc = os.path.join(filepath,'src','include','CNAME')
+    cnamedest = os.path.join(filepath,'docs','CNAME')
+    shutil.copyfile(cnamesrc,cnamedest)
+
     filepath = os.path.dirname(os.path.realpath('__file__'))
     filepath= os.path.join(filepath, 'src' , 'include')
 
