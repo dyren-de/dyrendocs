@@ -7,10 +7,10 @@ import re
 def prepare():
     """
     Cleans the workspace
-    and deletes everything in ./src/public
+    and deletes everything in ./docs
     """
     filepath = os.path.dirname(os.path.realpath('__file__')) #getting the current path
-    filepath = os.path.join(filepath, 'src' , 'public') #appending the workspace for python
+    filepath = os.path.join(filepath, 'docs') #appending the workspace for python
     print("Running in: " + filepath)
     if os.path.exists(filepath): #if exists files are getting reqursivly removed
         try:
@@ -25,7 +25,7 @@ def prepare():
 
     filepath = os.path.dirname(os.path.realpath('__file__'))
     tmppathfrom = os.path.join(filepath, 'src' , 'include', 'assets')
-    tmppathto = os.path.join(filepath, 'src','public', 'assets')
+    tmppathto = os.path.join(filepath,'docs', 'assets')
 
     try: #trying to make a new directory
         shutil.copytree(tmppathfrom, tmppathto)
@@ -65,8 +65,10 @@ def scanfiles():
 
 
     newfiles = []
+    realnewpath = os.path.dirname(os.path.realpath('__file__'))
+    realnewpath = os.path.join('src','articles')
     for result in results:
-        newpath = result.replace("articles", "public")
+        newpath = result.replace(realnewpath, "docs")
         newpath = os.path.splitext(newpath)[0]
         newpath = newpath + ".html"
         newfiles.append(newpath)
@@ -102,7 +104,7 @@ def minifycss():
     Used to minify css
     """
     pathtocss = os.path.dirname(os.path.realpath('__file__'))
-    pathtocss = os.path.join(pathtocss, 'src' , 'public', 'assets' , 'css', 'style.css')
+    pathtocss = os.path.join(pathtocss, 'docs', 'assets' , 'css', 'style.css')
     print(pathtocss)
     with open(pathtocss, 'r', encoding='utf-8') as f:
         css= f.read()

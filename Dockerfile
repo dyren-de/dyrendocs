@@ -13,7 +13,7 @@ COPY ./config/apache2.conf  /etc/apache2/apache2.conf
 
 RUN a2enmod rewrite
 
-COPY ./src /var/www/
+COPY ./docs /var/www/
 RUN chown -R www-data:www-data /var/www
 
 EXPOSE 80
