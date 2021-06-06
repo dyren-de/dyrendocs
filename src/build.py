@@ -105,7 +105,7 @@ def phrase(oldfiles,newfiles):
         with open(oldfile, 'r', encoding="utf8") as f:
             text = f.read()
             f.close
-            md = markdown.markdown(text)
+            md = markdown.markdown(text, extensions=['toc','meta'])
             html = str(head) + str(md) + str(footer)
 
         with open(newfile, 'w', encoding='utf-8-sig') as f:

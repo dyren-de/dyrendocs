@@ -1,8 +1,6 @@
-# Rolle als Designer
-## Rolle und Aufgabe als Designer:
-- Designer zeigen der Abteilungsleitung auf, wo es bei der Zusammenarbeit im Team/Abteilung Defizite gibt wenn welche vorhanden sind.
-- Jedes Teammitglied, kann selbst jederzeit neue Ideen und Verbesserungsvorschläge Vorschlagen, was von uns als Serverleitung gern gesehen wird.
-- Designs Entwerfen
+
+# Bewerbung:
+- Bei uns im Team lernst du viele Leute kennen, und kannst sicherlich Spaß haben.
 ## Anforderungen an euch:
 - Verantwortung übernehmen können (siehe unten)
 - Kritikfähig sein
@@ -14,3 +12,10 @@
 - Selbständig nach Hilfe suchen
 - Selbständiges Arbeiten
 - Selbständiges nachfragen falls etwas unklar ist o. ä.
+
+### Links:
+- Bewerbunen: [www.dyren.de/bewerbung](/bewerbung)
+    - Builder: [www.dyren.de/bewerbung/builder](/bewerbung/builder)
+    - Designer: [www.dyren.de/bewerbung/designer](/bewerbung/designer)
+    - Developer: [www.dyren.de/bewerbung/developer](/bewerbung/developer)
+    - Supporter: [www.dyren.de/bewerbung/supporter](/bewerbung/supporter)

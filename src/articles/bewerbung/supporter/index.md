@@ -1,7 +1,7 @@
 # Rolle als Supporter
 ## Rolle und Aufgabe als Supporter:
 - Supporter zeigen der Abteilungsleitung auf, wo es bei der Zusammenarbeit im Team/Abteilung Defizite gibt wenn welche vorhanden sind.
-- Jedes Teammitglied, kann selbst jederzeit neue Ideen und Verbesserungsvorschläge einbringen, was von uns als Serverleitung gern gesehen ist.
+- Jedes Teammitglied, kann selbst jederzeit neue Ideen und Verbesserungsvorschläge einbringen, was von uns als Serverleitung gern gesehen wird.
 - Support im Teamspeak oder in Minecraft (siehe ”Support Bereiche”)
 - Bei einem Regelbruch, der noch nicht Gemeldet wurde, eigenständig handeln.
 ## Anforderungen an euch:

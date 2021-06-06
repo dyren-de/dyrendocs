@@ -1,7 +1,7 @@
 # Rolle als Builder
 ## Rolle und Aufgabe als Builder:
 - Builder zeigen der Abteilungsleitung auf, wo es bei der Zusammenarbeit im Team/Abteilung Defizite gibt, wenn welche vorhanden sind.
-- Jedes Teammitglied, kann selbst jederzeit neue Ideen und Verbesserungsvorschläge Vorschlagen, was von uns als Serverleitung gern gesehen ist.
+- Jedes Teammitglied, kann selbst jederzeit neue Ideen und Verbesserungsvorschläge Vorschlagen, was von uns als Serverleitung gern gesehen wird.
 - Mithelfen beim Erbauen von Maps
 ## Anforderungen an euch:
 - Verantwortung übernehmen können (siehe „Bedeutung von Verantwortung“)

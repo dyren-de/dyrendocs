@@ -1,7 +1,7 @@
 # Rolle als Developer
 ## Rolle und Aufgabe als Developer:
 - Developer zeigen der Abteilungsleitung auf, wo es bei der Zusammenarbeit im Team/Abteilung Defizite gibt, wenn welche vorhanden sind.
-- Jedes Teammitglied, kann selbst jederzeit neue Ideen und Verbesserungsvorschläge vorschlagen, welches auch von uns als Serverleitung gern gesehen ist.
+- Jedes Teammitglied, kann selbst jederzeit neue Ideen und Verbesserungsvorschläge vorschlagen, welches auch von uns als Serverleitung gern gesehen wird.
 - Entwickeln des Netzwerkes, je nach Bereich liegt es auf unterschiedlichen Schwerpunkten (siehe „Development Schwerpunkte“).
 - Bugs im System Beheben.
 
