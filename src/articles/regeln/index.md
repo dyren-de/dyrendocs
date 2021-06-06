@@ -34,9 +34,9 @@ Private Daten wie Telefonnummern, Adressen, Passwörter und ähnlichem dürfen n
 # To Do
 stoerungen
 
-rn ist unerwünscht.
+Soundboard ist unerwünscht.
 
-HäDas stören von Benutzeufiges wechseln des Channels, Störgeräusche und Earrapes sind bitte zu vermeiden.
+Das stören von Benutzer, häufiges wechseln des Channels, Störgeräusche und Earrapes sind zu vermeiden.
 
 
 ## §0.6 Verstöße und Meldungen
