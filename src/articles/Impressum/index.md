@@ -9,7 +9,7 @@ Montoirestraße 11
 ## Kontakt
 
 Telefon: +49 1578 5107548
-E-Mail: mpe@web.de
+E-Mail: owner@dyren.de
 Website: www.dyren.de
 
 ## Bei redaktionellen Inhalten
