@@ -19,3 +19,4 @@
     - Designer: [www.dyren.de/bewerbung/designer](/bewerbung/designer)
     - Developer: [www.dyren.de/bewerbung/developer](/bewerbung/developer)
     - Supporter: [www.dyren.de/bewerbung/supporter](/bewerbung/supporter)
+    - Bwerbungs Formular: [https://forms.gle/Z7Q15D9SD8q7MqNp7](https://forms.gle/Z7Q15D9SD8q7MqNp7)
